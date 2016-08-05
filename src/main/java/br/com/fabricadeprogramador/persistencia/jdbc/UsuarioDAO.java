@@ -39,15 +39,15 @@ public class UsuarioDAO {
 	public void alterar(Usuario usu) {
 		
 		String sql = "update usuario set name=?, login=?,senha=? where id=?";
-	    try (PreparedStatement preparador = con.prepareStatement(sql)){//substitui o close()
-			preparador.setString(1, usu.getName()); //substitui ? pelo dado
+	    try (PreparedStatement preparador = con.prepareStatement(sql)){
+			preparador.setString(1, usu.getName()); 
 			preparador.setString(2, usu.getLogin());
 			preparador.setString(3, usu.getSenha());
 			preparador.setInt(4, usu.getId());
 			preparador.execute();
 			
 		} catch (SQLException e) {
-			//verifica se a sql escrita esta errada ou nao 
+			
 			e.printStackTrace();
 		}
 	}

@@ -13,7 +13,7 @@ import br.com.fabricadeprogramador.persistencia.jdbc.UsuarioDAO;
 
 
 @SuppressWarnings("serial")
-@WebServlet("/usucontroller.do")
+
 
 public class UsuarioController extends HttpServlet{
 
@@ -29,6 +29,8 @@ public class UsuarioController extends HttpServlet{
 	}
 	
 	@Override
+
+	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String name = req.getParameter("name");
@@ -41,7 +43,7 @@ public class UsuarioController extends HttpServlet{
 		usu.setSenha(senha);
 		UsuarioDAO usuDAO = new UsuarioDAO();
 		usuDAO.salvar(usu);
-		
+	
 		System.out.println("sucesso");
 	}
 	
